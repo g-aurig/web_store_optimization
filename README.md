@@ -5,7 +5,7 @@
 Data is coming from the Google Merchandise Store e-commerce dataset. The dataset is called "bigquery-public-data.ga4_obfuscated_sample_ecommerce.events" and contains data from 1/11-2020 until 31/01/2021. 
 
 # Objectives
-The objective of this analytics project is to gain insights with the help of BigQuery &amp; to provide actionable proposals based on the insights.
+The objective of this analytics project is to gain insights with the help of BigQuery &amp; to provide actionable proposals based on the insights with the aim of reaching business growth.
 
 # Results
 ## E-commerce funnel
@@ -15,6 +15,7 @@ We are looking at the following steps:
 - What products were added to the cart?
 - What products were removed from the cart?
 - How many of these products end up being purchased?
+  
 By answering these questions, data-informed decisions can be taken to strive for the web store goals in order to achieve the e-commerce strategy.
 
 ## Cross-selling
