@@ -10,7 +10,7 @@ The objective of this analytics project is to gain insights with the help of Big
 # Results
 ## E-commerce funnel
 The e-commerce funnel is essential for an online business, as it allows us to understand better how customers behave on the website.
-We are looking at the following steps:
+We are looking at the following steps in a **session scope**:
 - Which products were looked at in detail?
 - What products were added to the cart?
 - What products were removed from the cart?
