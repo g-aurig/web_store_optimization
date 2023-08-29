@@ -8,8 +8,8 @@ Data is coming from the Google Merchandise Store e-commerce dataset. The dataset
 The objective of this analytics project is to gain insights with the help of BigQuery &amp; to provide actionable proposals based on the insights with the aim of reaching business growth.
 
 # Results
-## E-commerce funnel
-The e-commerce funnel is essential for an online business, as it allows us to understand better how customers behave on the website.
+## Items ecommerce funnel
+The items ecommerce funnel is essential for an online business, as it allows us to understand better how the interaction with products looks like on the website.
 We are looking at the following steps in a **session scope**:
 - Which products were looked at in detail?
 - What products were added to the cart?
@@ -17,6 +17,8 @@ We are looking at the following steps in a **session scope**:
 - How many of these products end up being purchased?
   
 By answering these questions, data-informed decisions can be taken to strive for the web store goals in order to achieve the e-commerce strategy.
+
+![Screenshot 2023-08-29 at 11 18 19](https://github.com/g-aurig/web_store_optimization/assets/138019708/c6b50ceb-de9c-4bcb-8ab1-2e3d3ee45dcc)
 
 ## Cross-selling
 
