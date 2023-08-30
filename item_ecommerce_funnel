@@ -1,0 +1,46 @@
+WITH event_table AS (
+  SELECT
+    user_pseudo_id,
+    (SELECT value.int_value FROM unnest(event_params) WHERE key = 'ga_session_id') AS session_id,
+    event_name,
+    items.item_name
+  FROM
+    `bigquery-public-data.ga4_obfuscated_sample_ecommerce.events*`,
+    unnest(items) AS items
+  GROUP BY
+    user_pseudo_id,
+    session_id,
+    event_name,
+    item_name
+)
+SELECT
+  item_name,
+  COUNT(CASE WHEN event_name = 'view_item' THEN session_id ELSE NULL END) AS view_item,
+  COUNT(CASE WHEN event_name = 'add_to_cart' THEN session_id ELSE NULL END) AS add_to_cart,
+  COUNT(CASE WHEN event_name = 'begin_checkout' THEN session_id ELSE NULL END) AS begin_checkout,
+  COUNT(CASE WHEN event_name = 'purchase' THEN session_id ELSE NULL END) AS purchase,
+  -- Calculate cart-to-view ratio
+  round(IFNULL(
+    SAFE_DIVIDE(
+      IFNULL(COUNT(CASE WHEN event_name = 'add_to_cart' THEN session_id ELSE NULL END), 0), 
+      COUNT(CASE WHEN event_name = 'view_item' THEN session_id ELSE NULL END)
+    ), 0),3) AS cart_to_view_ratio,
+  -- Calculate checkout-to-view ratio
+  round(IFNULL(
+    SAFE_DIVIDE(
+      IFNULL(COUNT(CASE WHEN event_name = 'begin_checkout' THEN session_id ELSE NULL END), 0), 
+      COUNT(CASE WHEN event_name = 'view_item' THEN session_id ELSE NULL END)
+    ), 0),3) AS checkout_to_view_ratio,
+  -- Calculate purchase-to-view ratio
+  round(IFNULL(
+    SAFE_DIVIDE(
+      IFNULL(COUNT(CASE WHEN event_name = 'purchase' THEN session_id ELSE NULL END), 0), 
+      COUNT(CASE WHEN event_name = 'view_item' THEN session_id ELSE NULL END)
+    ), 0),3) AS purchase_to_view_ratio  
+FROM event_table
+WHERE
+  item_name != '(not set)'
+GROUP BY
+  item_name
+ORDER BY
+  purchase DESC;
