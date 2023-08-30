@@ -39,7 +39,7 @@ In the original state, the table is sorted by the "purchase" column, but can eas
 ## Further steps
 - Do data comparisons between different date ranges to see developments and trends over time, e.g. seasonal variations.
 - Do the same analysis in the opposite direction, i.e. investigating into products considered as "flops" that might need attention in form of improved descriptions, images, or pricing information.
-- Do a deep dive into analysing the checkout process to discover optimisation potential.
+- Do a deep dive into analysing the checkout process steps to discover optimisation potential.
 
 
 
