@@ -1,11 +1,24 @@
 # Analytics project - Web Store Optimization
 ![Screenshot 2023-08-24 at 16 04 05](https://github.com/g-aurig/web_store_optimization/assets/138019708/7973626b-94b7-43e0-9d7e-a036bc222ccb)
 
+- [Introduction](#Introduction)
+- [Objectives](#Objectives)
+- [Benchmarks](#Benchmarks)
+- [Results](#Results)
+- [Insights](#Insights)
+- [Recommendations](#Recommendations)
+- [Further steps](#Further-steps)
+
 # Introduction
 Data is coming from the Google Merchandise Store e-commerce dataset. The dataset is called "bigquery-public-data.ga4_obfuscated_sample_ecommerce.events" and contains data from 1/11-2020 until 31/01/2021. 
 
 # Objectives
 The objective of this analytics project is to gain insights of the data with the help of BigQuery &amp; to provide actionable recommendations based on the insights with the aim of reaching business growth.
+
+# Benchmarks
+The Average Order Value (AOV) is the average amount customers spend per purchase. The improvement of the AOV to increase the total revenue is one essential pillar for a web shop. For the considered time period the AOV is 69.38 USD.
+
+![Screenshot 2023-09-05 at 10 23 36](https://github.com/g-aurig/bigquery_samples/assets/138019708/3f63dccd-0de1-4e82-b2c9-2eaf22343bae)
 
 # Results
 ## Items ecommerce funnel with conversion ratios
