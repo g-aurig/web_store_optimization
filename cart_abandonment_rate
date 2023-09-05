@@ -1,0 +1,18 @@
+-- The Common Table Expression (CTE) named 'funnel_data' selects and counts the 'begin_checkout' events and the 'purchase' events whenever the 'ga_session_id' is not null.
+WITH funnel_data AS (
+  SELECT
+    COUNTIF(event_name = 'begin_checkout') AS begin_checkout,
+    COUNTIF(event_name = 'purchase') AS purchase
+  FROM
+    `bigquery-public-data.ga4_obfuscated_sample_ecommerce.events*`
+  WHERE
+    event_name IN ('begin_checkout', 'purchase')
+    AND (SELECT value.int_value FROM UNNEST(event_params) WHERE key = 'ga_session_id') IS NOT NULL
+)
+-- The select statement calculates the 'cart_abandonment_rate'based on the 'funnel_data' table and rounds the result to two decimal places.
+SELECT
+  begin_checkout,
+  purchase,
+ round(safe_subtract(1,SAFE_DIVIDE(purchase,begin_checkout))*100,2) AS cart_abandonment_rate
+FROM
+  funnel_data;
