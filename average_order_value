@@ -1,0 +1,22 @@
+-- Creating a Common Table Expression (CTE) named 'purchase_data'.
+-- The CTE accesses the columns 'transaction_id' and 'purchase_revenue' and filters 'transaction_id' fields where the value is 'null' or '(not set)'.
+with purchase_data as (
+select
+    ecommerce.transaction_id,
+    ecommerce.purchase_revenue
+from
+    `bigquery-public-data.ga4_obfuscated_sample_ecommerce.events_*`
+where
+ecommerce.transaction_id != 'null'and
+ecommerce.transaction_id != '(not set)'
+group by
+    transaction_id,
+    purchase_revenue)
+-- The select statement retrieves data from the CTE 'purchase_data'.
+-- It counts the 'transaction_id's and sums up the 'purchase_revenue' before dividing the values with each other to finally gain the average order value.
+select
+    count(distinct transaction_id) as transactions,
+    sum(purchase_revenue) as purchase_revenue,
+  round(safe_divide(SUM(purchase_revenue),COUNT(DISTINCT transaction_id)),2) AS avg_order_value,
+from
+    purchase_data
