@@ -21,6 +21,10 @@ The Average Order Value (AOV) is the average amount customers spend per purchase
 
 ![Screenshot 2023-09-05 at 10 23 36](https://github.com/g-aurig/web_store_optimization/assets/138019708/d6878c8d-1e40-4593-8849-c0ab47dfe977)
 
+An additional benchmark value can be the Cart Abandonment Rate which indicates how many users initialized the checkout without completing their purchase. For the Google Merchandise shop this rate is 85.31%.
+
+![Screenshot 2023-09-05 at 14 38 13](https://github.com/g-aurig/web_store_optimization/assets/138019708/59ce1abe-3a78-4837-a585-d1610a35f246)
+
 # Results
 ## Items ecommerce funnel with conversion ratios
 The ecommerce funnel for items is highly valuable for an online business because it provides a better understanding of how interactions with products occur on the website.
