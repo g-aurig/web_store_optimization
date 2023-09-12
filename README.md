@@ -7,6 +7,7 @@
 - [Insights](#Insights)
 - [Recommendations](#Recommendations)
 - [Further steps](#Further-steps)
+- [Resources](#Resources)
 
 # Introduction
 Data is coming from the Google Merchandise Store e-commerce dataset. The dataset is called "bigquery-public-data.ga4_obfuscated_sample_ecommerce.events" and contains data from 1/11-2020 until 31/01/2021. 
@@ -20,6 +21,11 @@ The objective of this analytics project is to gain insights of the data with the
 The Average Order Value (AOV) is the average amount customers spend per purchase. The improvement of the AOV to increase the total revenue is one essential pillar for a web shop. For the considered time period the AOV is 69.38 USD.
 
 ![Screenshot 2023-09-05 at 10 23 36](https://github.com/g-aurig/web_store_optimization/assets/138019708/d6878c8d-1e40-4593-8849-c0ab47dfe977)
+
+The bars are showing the distribution of the values for each order. The majority of orders are between 10–60 USD, and a very long tail of orders that are more than 150 USD.
+The strong dark line shows the share of orders on the total number of orders. 91% of our orders have a value between 0 and 150 USD which is helpful to know when a long tail of order values occurs.
+
+![Screenshot 2023-09-12 at 10 13 37](https://github.com/g-aurig/web_store_optimization/assets/138019708/7b404e20-4e0f-4581-b926-840c1913ed28)
 
 An additional benchmark value can be the Cart Abandonment Rate which indicates how many users initialized the checkout without completing their purchase. For the Google Merchandise shop this rate is 85.31%.
 
@@ -58,6 +64,10 @@ In the original state, the table is sorted by the "purchase" column, but can eas
 - Do data comparisons between different date ranges to see developments and trends over time, e.g. seasonal variations.
 - Do the same analysis in the opposite direction, i.e. investigating into products considered as "flops" that might need attention in form of improved descriptions, images, or pricing information.
 - Do a deep dive into analysing the checkout process steps to discover optimisation potential.
+
+## Resources
+The analysis has been done with the help of the following online resources.
+- [Median, Mode, and Average Order Value in BigQuery using SQL by Romain Granger](https://towardsdatascience.com/median-mode-and-average-order-value-in-bigquery-using-sql-8952bfbc288a)
 
 
 
